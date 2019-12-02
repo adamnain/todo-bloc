@@ -1,13 +1,12 @@
 import 'dart:async';
 
-import 'package:exampletododevindo/src/models/todoModels.dart';
-import 'package:exampletododevindo/src/resources/todoApiProvider.dart';
+import 'package:exampletododevindo/src/models/model_base.dart';
+import 'package:exampletododevindo/src/resources/provider_base_api.dart';
 
 class Repository{
-  // final title = '';
-  final todoApiProvider = TodoApiProvider();
+  final baseApiProvider = BaseApiProvider();
 
-  Future<List<Todo>> fetchAllTodo() => todoApiProvider.fetchTodoList();
-  Future addSaveTodo(String title) => todoApiProvider.addTodo(title);
-  Future updateSaveTodo(String ids) => todoApiProvider.updateTodo(ids);
+  Future<BaseModels> fetchAllList() => baseApiProvider.fetchList();
+  Future <bool> addLogin(String username, String password) => baseApiProvider.addLogin(username, password);
+  // Future updateSaveTodo(String ids) => todoApiProvider.updateTodo(ids);
 }
